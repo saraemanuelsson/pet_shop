@@ -53,3 +53,6 @@ def add_pet_to_stock(pet_shop, new_pet)
     return pet_shop[:pets].length
 end
 
+def customer_cash(customers)
+    return customers[:cash]
+end

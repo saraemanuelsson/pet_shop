@@ -1,3 +1,5 @@
+require ('pry')
+
 def pet_shop_name(pet_shop)
     return pet_shop[:name]
 end
@@ -33,9 +35,21 @@ def pets_by_breed(pet_shop, breed)
 end
 
 def find_pet_by_name(pet_shop, name)
-    
+
     for pet in pet_shop[:pets]
         return pet if pet[:name] == name
     end
 
+    return nil
 end
+
+def remove_pet_by_name(pet_shop, name)
+    pet = find_pet_by_name(pet_shop, name)
+    pet_shop[:pets].delete(pet)
+end
+
+def add_pet_to_stock(pet_shop, new_pet)
+    pet_shop[:pets].push(new_pet)
+    return pet_shop[:pets].length
+end
+
